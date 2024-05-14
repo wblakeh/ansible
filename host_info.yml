@@ -1,0 +1,8 @@
+- name: Gather basic system info
+  hosts: all
+  tasks:
+    - name: Gather facts
+      ansible.builtin.setup:
+      delegate_to: "{{ item }}"
+      delegate_facts: true
+      
